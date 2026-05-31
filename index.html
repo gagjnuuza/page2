@@ -74,7 +74,9 @@ button{border:none;border-radius:14px;padding:10px 14px;font-size:14px;cursor:po
 </div>
 
 <script>
-let venues=JSON.parse(localStorage.getItem("venues"))||["東京ドームシティシアターGロッソ"];
+let venues=JSON.parse(localStorage.getItem("venues"));
+    if(!venue || venues.lengyh === 0){venue = ["東京ドームシティシアターGロッソ"];
+                                      localStorage.setItem("venues",JSON.stringify(venues));
 let records=JSON.parse(localStorage.getItem("records"))||[];
 let editingIndex=null;
 const venueSelect=document.getElementById("venueSelect");
